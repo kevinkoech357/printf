@@ -93,3 +93,21 @@ int print_hexadecimal(va_list list, char buffer[],
 	return (print_hexa(list, "0123456789abcdef", buffer,
 		flags, 'x', width, precision, size));
 }
+
+/**
+ * print_hexa_upper - prints an unsigned number in upper hexadecimal notation
+ * @list: list of arguments
+ * @buffer: buffer array to handle print
+ * @flags:  calculates active flags
+ * @width: get width
+ * @precision: precision specification
+ * @size: size specifier
+ * Return: number of chars printed
+ */
+int print_hexa_upper(va_list list, char buffer[],
+	int flags, int width, int precision, int size)
+{
+	return (print_hexa(list, "0123456789ABCDEF", buffer,
+		flags, 'X', width, precision, size));
+}
+
