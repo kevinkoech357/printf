@@ -2,7 +2,7 @@
 
 /* function declaration */
 
-void print_buffer(char buffer[], int *buff-index);
+void print_buffer(char buffer[], int *buff_index);
 
 /**
 * _printf - function definition
@@ -15,9 +15,12 @@ void print_buffer(char buffer[], int *buff-index);
 
 int _printf(const char *format, ...)
 {
-	int i, printed = 0; printed_chars = 0;
-	
+	int i, printed, printed_chars;
+	int flags, width, precision, size, buff_ind = 0;
+
 	va_list list;
+
+	printed = printed_chars = 0;
 
 	char buffer[BUFF_SIZE];
 
@@ -25,6 +28,7 @@ int _printf(const char *format, ...)
 			return (-1);
 
 	va_start(list, format)
+
 	for (i = 0; format && format[i] != '\0'; i++)
 	{
 		if (format[i] != '%')
@@ -35,12 +39,19 @@ int _printf(const char *format, ...)
 				print_buffer(buffer, &buff_index);
 				printed_chars++;
 			}
-			else
-			{
-				print_buffer(buffer, &buff_index);
-				++i;
-				printed = handle_print(format, &i, list, buffer);
-				printed_chars += printed;
+		else
+		{
+			print_buffer(buffer, &buff_index);
+			flags = get_flags(format, &i);
+			width = get_width(format, &i, list);
+			precision = get_precision(format, &i, list);
+			size = get_size(format, &i);
+			++i;
+			printed = handle_print(format, &i, list, buffer,
+				flags, width, precision, size);
+			if (printed == -1)
+				return (-1);
+			printed_chars += printed;
 			}
 		}
 	}
@@ -54,7 +65,7 @@ int _printf(const char *format, ...)
 /**
 * print_buffer - prints the content of the buffer
 * @buffer: array of chars
-* buff_index: index at which to add next char
+* @buff_index: index at which to add next char
 * Return: void
 */
 
@@ -62,7 +73,7 @@ void print_buffer(char buffer[], int *buff_index)
 {
 	if (*buff_index > 0)
 	{
-		write (1, &buffer[0], *buff_index);
+		write(1, &buffer[0], *buff_index);
 	}
 
 	*buff_index = 0;
