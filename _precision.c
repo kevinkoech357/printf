@@ -1,4 +1,5 @@
 #include "main.h"
+
 /**
 * _precision - Calculates the precision for printing
 * @format: Formatted string in which to print the arguments
@@ -6,6 +7,7 @@
 * @list: list of arguments.
 * Return: Precision.
 */
+
 int _precision(const char *format, int *i, va_list list)
 {
 int curr_i = *i + 1;
