@@ -1,3 +1,5 @@
+#include "main.h"
+
 /************************* PRINT A STRING IN ROT13 *************************/
 /**
 * print_rot13string - Print a string in rot13.
@@ -9,8 +11,8 @@
 * @size: Size specifier
 * Return: Numbers of chars printed
 */
-int print_rot13string(va_list types, char buffer[],
-int flags, int width, int precision, int size)
+
+int print_rot13string(va_list types, char buffer[], int flags, int width, int precision, int size)
 {
 char x;
 char *str;
