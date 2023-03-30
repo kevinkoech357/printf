@@ -17,4 +17,3 @@ int flags, int width, int precision, int size)
 	char c = va_arg(list, int);
 	return (handle_write_char(c, buffer, flags, width, precision, size));
 }
-
