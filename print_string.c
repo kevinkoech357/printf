@@ -2,7 +2,7 @@
 
 /**
 * print_string - prints a string
-* @types: list of arguments
+* @list: list of arguments
 * @buffer: buffer array to handle print
 * @flags:  calculates active flags
 * @width: get width.
@@ -16,11 +16,13 @@ int flags, int width, int precision, int size)
 {
 	int length = 0, i;
 	char *str = va_arg(list, char *);
+
 	UNUSED(buffer);
 	UNUSED(flags);
 	UNUSED(width);
 	UNUSED(precision);
 	UNUSED(size);
+
 	if (str == NULL)
 	{
 		str = "(null)";
