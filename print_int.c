@@ -22,8 +22,8 @@ int flags, int width, int precision, int size)
 	n = convert_size_number(n, size);
 
 	if (n == 0)
-		buffer[i--] = '0';
-		buffer[BUFF_SIZE - 1] = '\0';
+	buffer[i--] = '0';
+	buffer[BUFF_SIZE - 1] = '\0';
 	num = (unsigned long int)n;
 
 	if (n < 0)
