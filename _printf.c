@@ -74,3 +74,4 @@ void print_buffer(char buffer[], int *buff_index)
 
 	*buff_index = 0;
 }
+

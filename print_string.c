@@ -55,3 +55,4 @@ int flags, int width, int precision, int size)
 
 	return (write(1, str, length));
 }
+
