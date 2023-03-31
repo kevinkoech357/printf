@@ -23,7 +23,7 @@ int flags, int width, int precision, int size)
 	UNUSED(precision);
 	UNUSED(size);
 
-	n = va_arg(types, unsigned int);
+	n = va_arg(list, unsigned int);
 	m = 2147483648; /* (2 ^ 31) */
 	a[0] = n / m;
 
