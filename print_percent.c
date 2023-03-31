@@ -4,6 +4,10 @@
 * print_percent - prints a percent sign
 * @list: list of arguments
 * @buffer: buffer array to handle print
+* @flags: flags
+* @width: width
+* @precision: precision
+* @size: size
 * Return: int value
 */
 
