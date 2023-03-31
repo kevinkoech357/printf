@@ -49,4 +49,3 @@ int flags, int width, int precision, int size)
 	}
 	return (printed_chars);
 }
-
