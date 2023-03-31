@@ -23,7 +23,7 @@ int _printf(const char *format, ...)
 	char buffer[BUFF_SIZE];
 
 	if (format == NULL)
-			return (-1);
+		return (-1);
 
 	va_start(list, format);
 
